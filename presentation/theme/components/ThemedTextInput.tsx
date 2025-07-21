@@ -5,11 +5,11 @@ import {useThemeColor} from "../hooks/useThemeColor";
 
 interface Props extends TextInputProps {
     icon?: keyof typeof Ionicons.glyphMap
-
+    styleView?: StyleProp<ViewStyle>
 }
 
 
-const ThemedTextInput = ({icon, style, ...rest}: Props) => {
+const ThemedTextInput = ({icon, style,styleView, ...rest}: Props) => {
     const primaryColor = useThemeColor({}, "primary");
     const textColor = useThemeColor({}, "text");
 
@@ -21,7 +21,7 @@ const ThemedTextInput = ({icon, style, ...rest}: Props) => {
             style={[{
                 ...styles.border,
                 borderColor: isActive ? primaryColor : "#cccccc",
-            },style as StyleProp<ViewStyle>]}
+            },styleView]}
             onTouchStart={() => inputRef.current?.focus()}
         >
             {icon && (
@@ -42,7 +42,7 @@ const ThemedTextInput = ({icon, style, ...rest}: Props) => {
                     color: textColor,
                     marginRight: 10,
                     flex: 1,
-                }]}
+                },style]}
             />
 
         </View>
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     border: {
         borderWidth: 1,
         borderRadius: 5,
-        padding: 5,
+        padding: 6,
         marginBottom: 10,
         flexDirection: "row",
         alignItems: "center",

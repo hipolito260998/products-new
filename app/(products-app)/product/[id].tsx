@@ -21,12 +21,12 @@ const ProductScreen = () => {
         >
             <ScrollView>
                 <ThemedView style={{marginHorizontal: 10, marginTop: 20}}>
-                    <ThemedTextInput placeholder='Titulo' style={{marginVertical: 5}}/>
-                    <ThemedTextInput placeholder='Slug' style={{marginVertical: 5}}/>
+                    <ThemedTextInput placeholder='Titulo' styleView={{marginVertical:5}}/>
+                    <ThemedTextInput placeholder='Slug' styleView={{marginVertical: 5}}/>
                     <ThemedTextInput
                         placeholder='Descripcion'
                         multiline={true}
-                        style={{marginVertical: 5}}
+                        styleView={{marginVertical: 5}}
                         numberOfLines={5}
                     />
                 </ThemedView>
@@ -38,8 +38,8 @@ const ProductScreen = () => {
                         gap: 10
                     }}
                 >
-                    <ThemedTextInput  placeholder='Precio' style={{flex:1}}/>
-                    <ThemedTextInput placeholder='Inventario' style={{flex:1}} />
+                    <ThemedTextInput  styleView={{flex:1,marginVertical:5}} placeholder='Precio' />
+                    <ThemedTextInput  styleView={{flex:1,marginVertical:5}} placeholder='Inventario' />
                 </ThemedView>
             </ScrollView>
         </KeyboardAvoidingView>
